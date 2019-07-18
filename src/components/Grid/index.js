@@ -2,86 +2,11 @@ import React from 'react';
 import { FlatList } from '../Utils';
 import { IconButton } from '../Header';
 
-const projects = [
-  {
-    title: 'Construction of Borehole',
-    location: 'Ikorodu, Lagos',
-    budget: '$150,000,000',
-    contractors: [
-      '/assets/logo.png', '/assets/logo.png'
-    ],
-    report: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo officiis a enim inventore quos velit ab ducimus vero perferendis quidem sequi voluptate architecto corrupti quibusdam magni delectus, explicabo tenetur recusandae.',
-    completion: 50,
-    uri: '/assets/6.jpg',
-    status: 0
-  },
-  {
-    title: 'Construction of Borehole',
-    location: 'Ikorodu, Lagos',
-    budget: '$150,000,000',
-    contractors: [
-      '/assets/logo.png', '/assets/logo.png'
-    ],
-    report: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo officiis a enim inventore quos velit ab ducimus vero perferendis quidem sequi voluptate architecto corrupti quibusdam magni delectus, explicabo tenetur recusandae.',
-    completion: 50,
-    uri: '/assets/6.jpg',
-    status: 1
-  },
-  {
-    title: 'Construction of Borehole',
-    location: 'Ikorodu, Lagos',
-    budget: '$150,000,000',
-    contractors: [
-      '/assets/logo.png', '/assets/logo.png'
-    ],
-    report: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo officiis a enim inventore quos velit ab ducimus vero perferendis quidem sequi voluptate architecto corrupti quibusdam magni delectus, explicabo tenetur recusandae.',
-    completion: 50,
-    uri: '/assets/6.jpg',
-    status: 2
-  },
-  {
-    title: 'Construction of Borehole',
-    location: 'Ikorodu, Lagos',
-    budget: '$150,000,000',
-    contractors: [
-      '/assets/logo.png', '/assets/logo.png'
-    ],
-    report: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo officiis a enim inventore quos velit ab ducimus vero perferendis quidem sequi voluptate architecto corrupti quibusdam magni delectus, explicabo tenetur recusandae.',
-    completion: 50,
-    uri: '/assets/6.jpg',
-    status: 3
-  },
-  {
-    title: 'Construction of Borehole',
-    location: 'Ikorodu, Lagos',
-    budget: '$150,000,000',
-    contractors: [
-      '/assets/logo.png', '/assets/logo.png'
-    ],
-    report: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo officiis a enim inventore quos velit ab ducimus vero perferendis quidem sequi voluptate architecto corrupti quibusdam magni delectus, explicabo tenetur recusandae.',
-    completion: 50,
-    uri: '/assets/6.jpg',
-    status: 4
-  },
-  {
-    title: 'Construction of Borehole',
-    location: 'Ikorodu, Lagos',
-    budget: '$150,000,000',
-    contractors: [
-      '/assets/logo.png', '/assets/logo.png'
-    ],
-    report: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo officiis a enim inventore quos velit ab ducimus vero perferendis quidem sequi voluptate architecto corrupti quibusdam magni delectus, explicabo tenetur recusandae.',
-    completion: 50,
-    uri: '/assets/6.jpg',
-    status: 5
-  }
-]
-
-export default function Grid() {
+export default function Grid(props) {
   return (
     <section className="grid">
       <FlatList
-        list={projects}
+        list={props.projects}
         listView={(i, o) => (
           <div key={`grid-${o}`} className="card">
             <Banner
@@ -136,7 +61,7 @@ function Profile(props) {
           </div>
           <div>
             <i>money</i>
-            <span>Budget: {props.budget}</span>
+            <span>Budget: ₦{props.budget}M</span>
           </div>
         </sub>
       </header>

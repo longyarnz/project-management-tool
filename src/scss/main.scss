@@ -1,5 +1,6 @@
 $color: #2d9cdb;
-$hover-color: darken($color, 35%);
+$dark-color: #555;
+$hover-color: darken($color, 10%);
 $card-height: 300px;
 @mixin use-flex($justify: initial, $align: center) {
   display: flex;
@@ -86,12 +87,13 @@ section.app {
         height: 100%;
         cursor: pointer;
         position: relative;
+        transition: all .25s ease;
 
         i {
           transform: rotate(90deg);
         }
 
-        &:hover {
+        &:hover, &.selected {
           background-color: $hover-color;
         }
       }
@@ -111,10 +113,15 @@ section.app {
       margin: 0px 0px 50px;
       border-radius: 5px;
       background-color: #f2f2f2;
+      transition: all .25s ease;
       box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4);
 
       @media screen and (max-width: 768px) {
         width: 100%;
+      }
+
+      &:hover {
+        box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.6);
       }
 
       section {
@@ -164,7 +171,7 @@ section.app {
             span:last-of-type {
               position: relative;
               z-index: 2;
-              color: $hover-color;
+              color: $dark-color;
               font-weight: 600;
             }
           }
