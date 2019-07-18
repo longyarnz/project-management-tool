@@ -31,7 +31,7 @@ i {
 section.app {
   margin: auto;
   background-color: #fff;
-  width: 80%;
+  width: 65%;
   min-height: 100vh;
   padding: 0px 40px;
   box-shadow: 0px 0px 8px -4px rgba(0, 0, 0, 0.2);
@@ -87,13 +87,14 @@ section.app {
         height: 100%;
         cursor: pointer;
         position: relative;
-        transition: all .25s ease;
+        transition: all 0.25s ease;
 
         i {
           transform: rotate(90deg);
         }
 
-        &:hover, &.selected {
+        &:hover,
+        &.selected {
           background-color: $hover-color;
         }
       }
@@ -113,25 +114,29 @@ section.app {
       margin: 0px 0px 50px;
       border-radius: 5px;
       background-color: #f2f2f2;
-      transition: all .25s ease;
+      transition: all 0.25s ease;
       box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4);
 
       @media screen and (max-width: 768px) {
         width: 100%;
       }
-
+      
       &:hover {
         box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.6);
+        
+        section:last-child {
+          left: 0;
+          z-index: 5;
+          background: #ffff;
+        }
       }
-
+      
       section {
+        transition: all .25s ease;
+        
         &:first-child {
           width: 35%;
           position: relative;
-
-          img {
-            width: 100%;
-          }
 
           & > span {
             position: absolute;
@@ -155,7 +160,7 @@ section.app {
             border-radius: 5px;
             background-color: #fff;
             overflow: hidden;
-            box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4);
+            box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.6);
 
             span:first-of-type {
               background-color: #2d9cdb;
@@ -180,6 +185,8 @@ section.app {
         &:last-child {
           width: 65%;
           padding: 5% 15px;
+          left: 65%;
+          position: relative;
 
           h5 {
             font-weight: 500;

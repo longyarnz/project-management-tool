@@ -3,7 +3,9 @@ import Header from './components/Header';
 import Grid from './components/Grid';
 import Data from './components/Data';
 
-const raw = Data(10);
+const raw = Data;
+
+console.log(JSON.stringify(raw));
 
 export default function App() {
   const [projects, setProjects] = useState(raw);
