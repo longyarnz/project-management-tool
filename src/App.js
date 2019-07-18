@@ -1,11 +1,16 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import Header from './components/Header';
 import Grid from './components/Grid';
-import Static from './components/Static';
-const raw = Static;
 
 export default function App() {
-  const [projects, setProjects] = useState(raw);
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    // Backend server API call.
+    fetch('/assets/static', {
+      headers: {'Accept': 'application/json'}
+    }).then(res => res.json()).then(api => setProjects(api));
+  }, []);
   
   const sortBy = useCallback(modifier => {
     let filtrate = [ ...projects ];
