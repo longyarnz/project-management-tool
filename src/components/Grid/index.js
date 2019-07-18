@@ -50,6 +50,9 @@ function Banner(props) {
 }
 
 function Profile(props) {
+  const budget = props.budget > 999 ? Math.ceil(props.budget / 1000) : props.budget;
+  const quantifier = props.budget > 999 ? 'B' : 'M';
+
   return (
     <section className="profile">
       <header>
@@ -61,7 +64,7 @@ function Profile(props) {
           </div>
           <div>
             <i>money</i>
-            <span>Budget: ₦{props.budget}M</span>
+            <span>Budget: ₦{budget}{quantifier}</span>
           </div>
         </sub>
       </header>
